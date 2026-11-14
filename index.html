@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Just For You, Samrudhhi ♡</title>
+
+  <!-- Google Fonts: Playfair Display, Plus Jakarta Sans, and Dancing Script -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN for responsive layout utilities -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root {
+      --bg-cream: #fff7fa;
+      --bg-blush: #ffeef5;
+      --pink-soft: #ffd6e7;
+      --pink-primary: #ff6b9d;
+      --pink-deep: #e0457b;
+      --gold-warm: #d4af37;
+      --gold-light: #f9e596;
+      --text-dark: #4a2538;
+      --text-muted: #87586f;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--text-dark);
+      background: radial-gradient(circle at 15% 20%, #fff0f6 0%, #ffeef5 40%, #fce3ee 80%, #fff7fa 100%);
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .font-serif-title {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+
+    .font-handwriting {
+      font-family: 'Dancing Script', cursive;
+    }
+
+    /* Animated Ambient Background Orbs */
+    .ambient-orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(65px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.65;
+      animation: floatOrb 14s ease-in-out infinite alternate;
+    }
+
+    .orb-1 {
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle, #ffc2db, #ffe5f0);
+      top: -80px;
+      left: -80px;
+    }
+
+    .orb-2 {
+      width: 380px;
+      height: 380px;
+      background: radial-gradient(circle, #ffd1e3, #fff0d9);
+      bottom: -100px;
+      right: -80px;
+      animation-delay: -5s;
+    }
+
+    .orb-3 {
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, #ffe0eb, #f7d9ff);
+      top: 42%;
+      left: 55%;
+      animation-delay: -9s;
+    }
+
+    @keyframes floatOrb {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(25px, -30px) scale(1.08); }
+      100% { transform: translate(-20px, 25px) scale(0.95); }
+    }
+
+    /* Floating Background Canvas for Hearts & Stars */
+    #bg-particles {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .floating-item {
+      position: absolute;
+      bottom: -50px;
+      pointer-events: none;
+      animation: riseUp linear infinite;
+      opacity: 0.55;
+    }
+
+    @keyframes riseUp {
+      0% {
+        transform: translateY(0) rotate(0deg) scale(0.8);
+        opacity: 0;
+      }
+      15% {
+        opacity: 0.6;
+      }
+      85% {
+        opacity: 0.6;
+      }
+      100% {
+        transform: translateY(-115vh) rotate(360deg) scale(1.15);
+        opacity: 0;
+      }
+    }
+
+    /* Glassmorphism Cards */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1.5px solid rgba(255, 255, 255, 0.92);
+      box-shadow:
+        0 20px 50px rgba(224, 69, 123, 0.12),
+        0 6px 18px rgba(255, 107, 157, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    }
+
+    .glass-subcard {
+      background: rgba(255, 250, 252, 0.85);
+      border: 1.5px solid rgba(255, 198, 219, 0.65);
+      box-shadow: 0 8px 24px rgba(224, 69, 123, 0.07);
+      transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .glass-subcard:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px rgba(224, 69, 123, 0.13);
+      border-color: rgba(255, 107, 157, 0.6);
+    }
+
+    /* Premium Buttons */
+    .btn-primary {
+      background: linear-gradient(135deg, #ff7eb3 0%, #ff5c93 50%, #e0457b 100%);
+      color: #ffffff;
+      box-shadow: 0 10px 25px -5px rgba(224, 69, 123, 0.48), inset 0 1px 1px rgba(255, 255, 255, 0.45);
+      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 15px 30px -5px rgba(224, 69, 123, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.6);
+    }
+
+    .btn-primary:active {
+      transform: translateY(1px) scale(0.98);
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #f3d078 0%, #d4af37 55%, #b8860b 100%);
+      color: #3d2600;
+      box-shadow: 0 10px 25px -5px rgba(212, 175, 55, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.65);
+      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 14px 28px -5px rgba(212, 175, 55, 0.6);
+    }
+
+    .btn-runaway {
+      background: rgba(255, 240, 246, 0.95);
+      color: #9e5c76;
+      border: 1.5px solid #f3bfd3;
+      box-shadow: 0 4px 12px rgba(158, 92, 118, 0.12);
+      transition: left 0.22s cubic-bezier(0.34, 1.56, 0.64, 1),
+                  top 0.22s cubic-bezier(0.34, 1.56, 0.64, 1),
+                  transform 0.2s ease,
+                  background-color 0.2s ease;
+      touch-action: none;
+    }
+
+    /* Stage Transitions */
+    .stage-screen {
+      display: none;
+      opacity: 0;
+      transform: translateY(18px) scale(0.98);
+      transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .stage-screen.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    /* Cute Floating Hero Emblem */
+    @keyframes gentleBob {
+      0%, 100% { transform: translateY(0px) rotate(-2deg); }
+      50% { transform: translateY(-10px) rotate(2deg); }
+    }
+
+    .animate-bob {
+      animation: gentleBob 3.6s ease-in-out infinite;
+    }
+
+    @keyframes pulseHeart {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.14); }
+    }
+
+    .animate-heartbeat {
+      animation: pulseHeart 1.8s ease-in-out infinite;
+    }
+
+    /* Shake Animation for Mystery Box */
+    @keyframes boxShake {
+      0%, 100% { transform: rotate(0deg) scale(1); }
+      20% { transform: rotate(-10deg) scale(1.08); }
+      40% { transform: rotate(10deg) scale(1.1); }
+      60% { transform: rotate(-8deg) scale(1.08); }
+      80% { transform: rotate(8deg) scale(1.05); }
+    }
+
+    .shake-box {
+      animation: boxShake 0.55s ease-in-out;
+    }
+
+    /* Radar Sweep Animation */
+    @keyframes radarSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .radar-sweep {
+      animation: radarSpin 1.2s linear infinite;
+    }
+
+    /* Personalised Letter Paper Styling */
+    .letter-paper {
+      background: linear-gradient(180deg, #fffdf9 0%, #fff7f9 100%);
+      border: 2px solid #f7d6e4;
+      box-shadow:
+        0 18px 40px rgba(186, 85, 126, 0.14),
+        inset 0 0 32px rgba(255, 214, 231, 0.35);
+      position: relative;
+      user-select: text;
+    }
+
+    .letter-paper::before {
+      content: "";
+      position: absolute;
+      inset: 10px;
+      border: 1px dashed rgba(212, 175, 55, 0.45);
+      border-radius: 16px;
+      pointer-events: none;
+    }
+
+    .letter-paragraph {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .letter-paragraph.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Certificate Styling */
+    .certificate-frame {
+      background: linear-gradient(135deg, #fffdf7 0%, #fff5f8 50%, #fffaf0 100%);
+      border: 3px solid #e6c665;
+      box-shadow:
+        0 16px 36px rgba(212, 175, 55, 0.18),
+        inset 0 0 0 6px #fff9fb,
+        inset 0 0 0 8px rgba(212, 175, 55, 0.45);
+      position: relative;
+    }
+
+    /* Burst Particle */
+    .burst-particle {
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      will-change: transform, opacity;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #ffeef5;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #ff9ec0;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between relative selection:bg-pink-200 selection:text-pink-900">
+
+  <!-- Ambient Pastel Glowing Orbs -->
+  <div class="ambient-orb orb-1"></div>
+  <div class="ambient-orb orb-2"></div>
+  <div class="ambient-orb orb-3"></div>
+
+  <!-- Continuous Floating Hearts & Stars Background -->
+  <div id="bg-particles" aria-hidden="true"></div>
+
+  <!-- Top Navigation / Progress Bar & Sound Toggle -->
+  <header class="relative z-20 w-full max-w-2xl mx-auto px-4 pt-4 pb-2 flex items-center justify-between">
+    <div class="flex items-center gap-2 bg-white/75 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-pink-200/80 shadow-sm">
+      <span class="inline-block w-2.5 h-2.5 rounded-full bg-pink-500 animate-heartbeat"></span>
+      <span class="text-xs sm:text-sm font-semibold tracking-wide text-pink-900">Just For You, Samrudhhi ♡</span>
+    </div>
+
+    <!-- Step Dots & Sound Toggle -->
+    <div class="flex items-center gap-3">
+      <div class="flex items-center gap-1.5 bg-white/75 backdrop-blur-md px-3 py-1.5 rounded-full border border-pink-200/80 shadow-sm" aria-label="Experience Progress">
+        <span id="dot-1" class="w-2.5 h-2.5 rounded-full bg-pink-500 transition-all duration-300"></span>
+        <span id="dot-2" class="w-2 h-2 rounded-full bg-pink-200 transition-all duration-300"></span>
+        <span id="dot-3" class="w-2 h-2 rounded-full bg-pink-200 transition-all duration-300"></span>
+        <span id="dot-4" class="w-2 h-2 rounded-full bg-pink-200 transition-all duration-300"></span>
+        <span id="dot-5" class="w-2 h-2 rounded-full bg-pink-200 transition-all duration-300"></span>
+      </div>
+
+      <button id="sound-toggle" type="button" title="Toggle cute sound effects"
+        class="w-9 h-9 rounded-full bg-white/80 backdrop-blur-md border border-pink-200/90 flex items-center justify-center text-pink-600 hover:bg-pink-50 active:scale-95 transition shadow-sm">
+        <svg id="sound-on-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M11 5L6 9H2v6h4l5 4V5z"></path>
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.54 8.46a5 5 0 010 7.07M19.07 4.93a10 10 0 010 14.14"></path>
+        </svg>
+        <svg id="sound-off-icon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M11 5L6 9H2v6h4l5 4V5zM23 9l-6 6M17 9l6 6"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Interactive Stage Container -->
+  <main class="relative z-10 flex-1 flex items-center justify-center w-full max-w-2xl mx-auto px-4 py-4 sm:py-8">
+
+    <!-- ==========================================
+         STAGE 1: OPENING WELCOME SCREEN
+         ========================================== -->
+    <section id="stage-1" class="stage-screen active w-full">
+      <div class="glass-card rounded-3xl p-6 sm:p-10 text-center relative overflow-hidden">
+        <!-- Decorative Corner Sparkles -->
+        <div class="absolute -top-6 -right-6 w-24 h-24 bg-pink-200/40 rounded-full blur-xl pointer-events-none"></div>
+        <div class="absolute -bottom-6 -left-6 w-24 h-24 bg-amber-200/40 rounded-full blur-xl pointer-events-none"></div>
+
+        <!-- Top Pill Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-pink-100/90 border border-pink-200 text-pink-700 text-xs sm:text-sm font-semibold mb-6 shadow-inner">
+          <span>✨ VIP Friendship Delivery</span>
+          <span>•</span>
+          <span>100% Custom Made</span>
+        </div>
+
+        <!-- Animated CSS/SVG Love Letter & Floating Heart Emblem -->
+        <div class="relative w-32 h-32 mx-auto mb-6 flex items-center justify-center animate-bob">
+          <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-pink-200/70 via-rose-100/80 to-amber-100/70 blur-md"></div>
+          <div class="relative w-28 h-28 rounded-3xl bg-gradient-to-br from-white via-pink-50 to-rose-100 border-2 border-white shadow-lg flex items-center justify-center">
+            <!-- Envelope & Heart SVG Art -->
+            <svg class="w-16 h-16 text-pink-500" viewBox="0 0 64 64" fill="none">
+              <rect x="6" y="14" width="52" height="38" rx="8" fill="#FFE4EE" stroke="#FF6B9D" stroke-width="2.5"/>
+              <path d="M8 17L32 35L56 17" stroke="#FF6B9D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path class="animate-heartbeat" style="transform-origin: 32px 26px;"
+                d="M32 39C32 39 18 29.8 18 21.5C18 17.4 21.2 14 25.2 14C27.8 14 30.2 15.4 32 17.7C33.8 15.4 36.2 14 38.8 14C42.8 14 46 17.4 46 21.5C46 29.8 32 39 32 39Z"
+                fill="#FF5C93" stroke="#E0457B" stroke-width="1.5"/>
+              <circle cx="14" cy="10" r="2" fill="#D4AF37"/>
+              <circle cx="52" cy="11" r="2.5" fill="#FF6B9D"/>
+              <circle cx="55" cy="46" r="2" fill="#D4AF37"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="font-serif-title text-3xl sm:text-4xl md:text-5xl font-bold text-pink-950 leading-tight mb-4">
+          Hey Baby! <br class="hidden sm:inline" />
+          <span class="bg-gradient-to-r from-pink-600 via-rose-500 to-amber-600 bg-clip-text text-transparent">
+            I made something for you...
+          </span>
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-sm sm:text-base text-pink-900/80 max-w-md mx-auto leading-relaxed mb-8">
+          Welcome to a tiny interactive world built exclusively for <strong class="text-pink-700 font-semibold">Samrudhhi</strong>.
+          Warning: Contains questionable jokes, an extremely stubborn button, hidden surprises, and genuine appreciation.
+        </p>
+
+        <!-- Start Experience Button -->
+        <button id="btn-start-experience" type="button"
+          class="btn-primary px-8 py-4 rounded-2xl font-semibold text-base sm:text-lg inline-flex items-center gap-3 cursor-pointer">
+          <span>Start the Experience</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          </svg>
+        </button>
+
+        <p class="mt-4 text-xs text-pink-700/70 font-medium">
+          🎧 Sound effects are enabled • Takes 5 fun minutes
+        </p>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         STAGE 2: 5 FUNNY QUESTIONS & RUNAWAY BUTTON
+         ========================================== -->
+    <section id="stage-2" class="stage-screen w-full">
+      <div class="glass-card rounded-3xl p-6 sm:p-9 text-center relative overflow-hidden">
+
+        <!-- Top Question Progress Header -->
+        <div class="flex items-center justify-between gap-4 mb-4">
+          <span id="question-counter-badge"
+            class="px-3.5 py-1 rounded-full bg-pink-100 text-pink-700 text-xs font-bold tracking-wide uppercase">
+            Question 1 of 5
+          </span>
+          <span id="dodge-counter-badge"
+            class="px-3 py-1 rounded-full bg-amber-50 border border-amber-200/80 text-amber-800 text-xs font-semibold hidden">
+            Nice tries: <span id="dodge-count-num">0</span> 😜
+          </span>
+        </div>
+
+        <!-- Smooth Progress Bar -->
+        <div class="w-full h-2 bg-pink-100 rounded-full overflow-hidden mb-6">
+          <div id="question-progress-bar"
+            class="h-full bg-gradient-to-r from-pink-400 to-rose-500 rounded-full transition-all duration-500"
+            style="width: 20%;"></div>
+        </div>
+
+        <!-- Cute Dynamic SVG Mood Badge -->
+        <div id="question-mood-icon"
+          class="w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-pink-50 to-rose-100 border border-pink-200 flex items-center justify-center shadow-sm text-3xl">
+          ✨
+        </div>
+
+        <!-- Question Title -->
+        <h2 id="question-title"
+          class="font-serif-title text-2xl sm:text-3xl font-bold text-pink-950 leading-snug mb-2 min-h-[3.5rem] flex items-center justify-center">
+          Are you ready for some nonsense?
+        </h2>
+
+        <!-- Playful Subtext / Reaction Quip -->
+        <p id="question-subtext" class="text-sm sm:text-base text-pink-800/75 mb-6 min-h-[1.75rem]">
+          Choose wisely... (Hint: One of these buttons has trust issues)
+        </p>
+
+        <!-- Interactive Button Arena (Relative container so the runaway button never leaves the screen!) -->
+        <div id="button-arena"
+          class="relative w-full min-h-[210px] sm:min-h-[190px] rounded-2xl bg-gradient-to-b from-pink-50/70 to-white/80 border border-pink-200/70 p-4 flex flex-col sm:flex-row items-center justify-center gap-4 overflow-hidden">
+
+          <!-- Positive Button (Always Works & Grows Invitingly) -->
+          <button id="btn-answer-yes" type="button"
+            class="btn-primary z-20 px-7 py-3.5 rounded-2xl font-bold text-base sm:text-lg cursor-pointer shadow-lg transition-transform duration-200">
+            Yes, born ready! 💖
+          </button>
+
+          <!-- Negative Runaway Button (Dodges Hover, Touch, and Click) -->
+          <button id="btn-answer-no" type="button"
+            class="btn-runaway z-10 px-6 py-3 rounded-2xl font-semibold text-sm sm:text-base cursor-pointer select-none">
+            No thanks 🙄
+          </button>
+        </div>
+
+        <!-- Sweet Pop-up Reaction Overlay When She Clicks YES -->
+        <div id="question-reaction-overlay"
+          class="hidden absolute inset-0 z-30 bg-white/90 backdrop-blur-md flex flex-col items-center justify-center p-6 text-center animate-fadeIn">
+          <div id="reaction-emoji" class="text-5xl mb-3 animate-bounce">🥰</div>
+          <h3 id="reaction-title" class="font-serif-title text-2xl sm:text-3xl font-bold text-pink-900 mb-2">
+            I knew it!
+          </h3>
+          <p id="reaction-message" class="text-sm sm:text-base text-pink-800 max-w-md mb-6">
+            Best answer possible. Let's keep going!
+          </p>
+          <button id="btn-next-question" type="button"
+            class="btn-primary px-7 py-3 rounded-2xl font-semibold text-base inline-flex items-center gap-2 cursor-pointer">
+            <span>Next Question</span>
+            <span>→</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         STAGE 3: UNEXPECTED SURPRISES (4 MINI-MOMENTS)
+         ========================================== -->
+    <section id="stage-3" class="stage-screen w-full">
+      <div class="glass-card rounded-3xl p-5 sm:p-8 relative overflow-hidden">
+
+        <!-- Stage Header -->
+        <div class="text-center mb-6">
+          <span class="inline-block px-3.5 py-1 rounded-full bg-pink-100 text-pink-700 text-xs font-bold uppercase tracking-wider mb-2">
+            ✨ Secret Vault Unlocked
+          </span>
+          <h2 class="font-serif-title text-2xl sm:text-3xl font-bold text-pink-950">
+            4 Little Surprises For Samrudhhi
+          </h2>
+          <p class="text-xs sm:text-sm text-pink-800/75 mt-1">
+            Tap around and explore! Complete the Mini Friendship Challenge below to unlock your personal letter.
+          </p>
+        </div>
+
+        <!-- Automatic Delayed Surprise Banner (Appears automatically after a few seconds in Stage 3) -->
+        <div id="auto-surprise-toast"
+          class="hidden mb-5 p-3.5 rounded-2xl bg-gradient-to-r from-amber-50 via-pink-50 to-rose-50 border border-amber-300/80 shadow-sm flex items-center justify-between gap-3">
+          <div class="flex items-center gap-3 text-left">
+            <span class="text-2xl">🌟</span>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wider text-amber-800">Unexpected Interrupting Reminder</p>
+              <p class="text-xs sm:text-sm text-pink-950 font-medium">
+                Breaking News: Scientists just confirmed your smile makes any room 100x brighter! ♡
+              </p>
+            </div>
+          </div>
+          <button id="close-auto-toast" type="button" class="text-xs font-bold text-pink-600 hover:text-pink-800 px-2 py-1">
+            Aww ♡
+          </button>
+        </div>
+
+        <!-- 2x2 Grid of Unexpected Interactive Surprises -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+
+          <!-- SURPRISE 1: Hidden Compliment Generator -->
+          <div class="glass-subcard rounded-2xl p-4 sm:p-5 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-bold uppercase tracking-wider text-pink-600">Surprise #1</span>
+                <span id="compliment-count" class="text-xs text-pink-500 font-semibold">1 / 8</span>
+              </div>
+              <h3 class="font-serif-title text-lg font-bold text-pink-950 mb-2 flex items-center gap-2">
+                <span>🪄</span>
+                <span>Compliment Dispenser</span>
+              </h3>
+              <div id="compliment-box"
+                class="min-h-[76px] p-3 rounded-xl bg-pink-50/90 border border-pink-200/70 flex items-center justify-center text-center text-xs sm:text-sm text-pink-900 font-medium italic mb-3">
+                "Tap the button below to dispense a 100% factual compliment about Samrudhhi!"
+              </div>
+            </div>
+            <button id="btn-compliment" type="button"
+              class="w-full py-2.5 px-4 rounded-xl bg-pink-500 hover:bg-pink-600 active:scale-98 text-white font-semibold text-xs sm:text-sm transition shadow-sm cursor-pointer">
+              Reveal Hidden Compliment ✨
+            </button>
+          </div>
+
+          <!-- SURPRISE 2: Mystery Box (VIP Friendship Coupons) -->
+          <div class="glass-subcard rounded-2xl p-4 sm:p-5 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-bold uppercase tracking-wider text-amber-600">Surprise #2</span>
+                <span id="box-status-badge" class="text-xs text-amber-700 font-semibold">Tap to Unbox</span>
+              </div>
+              <h3 class="font-serif-title text-lg font-bold text-pink-950 mb-2 flex items-center gap-2">
+                <span>🎁</span>
+                <span>The Mystery Gift Box</span>
+              </h3>
+
+              <!-- Unopened Box View -->
+              <div id="mystery-box-closed"
+                class="min-h-[115px] flex flex-col items-center justify-center p-3 rounded-xl bg-gradient-to-b from-amber-50/70 to-pink-50/70 border border-amber-200/80 cursor-pointer group">
+                <div id="mystery-box-svg" class="w-14 h-14 flex items-center justify-center transition-transform group-hover:scale-110">
+                  <svg class="w-12 h-12" viewBox="0 0 64 64" fill="none">
+                    <rect x="10" y="26" width="44" height="30" rx="4" fill="#FF7EB3" stroke="#E0457B" stroke-width="2.5"/>
+                    <rect x="7" y="18" width="50" height="10" rx="3" fill="#FF9EC6" stroke="#E0457B" stroke-width="2.5"/>
+                    <rect x="28" y="18" width="8" height="38" fill="#F3D078" stroke="#D4AF37" stroke-width="2"/>
+                    <path d="M32 18C24 8 15 12 20 18C24 20 32 18 32 18Z" fill="#F3D078" stroke="#D4AF37" stroke-width="2"/>
+                    <path d="M32 18C40 8 49 12 44 18C40 20 32 18 32 18Z" fill="#F3D078" stroke="#D4AF37" stroke-width="2"/>
+                  </svg>
+                </div>
+                <p class="text-xs text-pink-800 font-semibold mt-1">Tap the gift box to open it!</p>
+              </div>
+
+              <!-- Opened VIP Coupons View -->
+              <div id="mystery-box-opened" class="hidden space-y-2">
+                <div class="p-2.5 rounded-xl bg-gradient-to-r from-amber-50 to-pink-50 border border-amber-300 flex items-center justify-between gap-2">
+                  <div class="text-left">
+                    <p class="text-[11px] font-bold uppercase text-amber-800">VIP Pass #01</p>
+                    <p class="text-xs font-semibold text-pink-950">Automatically Win Any Argument</p>
+                  </div>
+                  <span class="px-2 py-0.5 rounded-md bg-amber-200/80 text-amber-950 text-[10px] font-bold">LIFETIME</span>
+                </div>
+                <div class="p-2.5 rounded-xl bg-gradient-to-r from-pink-50 to-rose-50 border border-pink-300 flex items-center justify-between gap-2">
+                  <div class="text-left">
+                    <p class="text-[11px] font-bold uppercase text-pink-700">VIP Pass #02</p>
+                    <p class="text-xs font-semibold text-pink-950">24/7 Nonsense & Venting Privilege</p>
+                  </div>
+                  <span class="px-2 py-0.5 rounded-md bg-pink-200 text-pink-900 text-[10px] font-bold">UNLIMITED</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SURPRISE 3: Delayed Surprise Detector (Awesomeness Radar) -->
+          <div class="glass-subcard rounded-2xl p-4 sm:p-5 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-bold uppercase tracking-wider text-rose-600">Surprise #3</span>
+                <span id="radar-status-text" class="text-xs text-rose-500 font-semibold">Ready to Scan</span>
+              </div>
+              <h3 class="font-serif-title text-lg font-bold text-pink-950 mb-2 flex items-center gap-2">
+                <span>📡</span>
+                <span>Awesomeness Radar</span>
+              </h3>
+              <div id="radar-display"
+                class="min-h-[76px] p-3 rounded-xl bg-rose-50/90 border border-rose-200/80 flex flex-col items-center justify-center text-center mb-3">
+                <p id="radar-message" class="text-xs sm:text-sm text-pink-900 font-medium">
+                  Run a 3-second scientific scan to measure Samrudhhi's official awesomeness level.
+                </p>
+                <div id="radar-progress-wrap" class="w-full h-2 bg-pink-200/70 rounded-full overflow-hidden mt-2 hidden">
+                  <div id="radar-progress-bar" class="h-full bg-gradient-to-r from-pink-500 to-amber-500 w-0 transition-all duration-300"></div>
+                </div>
+              </div>
+            </div>
+            <button id="btn-radar-scan" type="button"
+              class="w-full py-2.5 px-4 rounded-xl bg-rose-500 hover:bg-rose-600 text-white font-semibold text-xs sm:text-sm transition shadow-sm cursor-pointer">
+              Start 3-Second Scan 🔍
+            </button>
+          </div>
+
+          <!-- SURPRISE 4: Mini Friendship Challenge (Charge the Appreciation Meter) -->
+          <div class="glass-subcard rounded-2xl p-4 sm:p-5 flex flex-col justify-between border-2 border-pink-300/90">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-bold uppercase tracking-wider text-pink-700">Surprise #4 • Mini Challenge</span>
+                <span id="meter-percent-badge" class="text-xs font-bold text-pink-600">0% Charged</span>
+              </div>
+              <h3 class="font-serif-title text-lg font-bold text-pink-950 mb-1 flex items-center gap-2">
+                <span>⚡</span>
+                <span>Charge the Friendship Meter!</span>
+              </h3>
+              <p class="text-xs text-pink-800/80 mb-3">
+                Tap the heart charger 5 times to reach 100% and unlock your secret letter!
+              </p>
+
+              <!-- Meter Bar -->
+              <div class="w-full h-4 bg-pink-100 rounded-full p-0.5 border border-pink-200 mb-3 overflow-hidden">
+                <div id="friendship-meter-bar"
+                  class="h-full bg-gradient-to-r from-pink-400 via-rose-500 to-amber-400 rounded-full transition-all duration-300"
+                  style="width: 0%;"></div>
+              </div>
+            </div>
+
+            <button id="btn-charge-meter" type="button"
+              class="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 active:scale-95 text-white font-bold text-xs sm:text-sm transition shadow-md cursor-pointer flex items-center justify-center gap-2">
+              <span>Tap to Send Heart Energy 💖</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Unlockable CTA to Open Personalised Letter -->
+        <div class="text-center pt-2 border-t border-pink-200/60">
+          <button id="btn-goto-letter" type="button"
+            class="btn-primary w-full sm:w-auto px-8 py-4 rounded-2xl font-bold text-base sm:text-lg inline-flex items-center justify-center gap-3 cursor-pointer">
+            <span>Open Your Personalised Letter 💌</span>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </button>
+          <p id="letter-unlock-hint" class="text-xs text-pink-700/80 mt-2">
+            ✨ Tip: Charge the Friendship Meter to 100% for maximum sparkles!
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         STAGE 4: PERSONALISED LETTER TO SAMRUDHHI
+         ========================================== -->
+    <section id="stage-4" class="stage-screen w-full">
+      <div class="glass-card rounded-3xl p-5 sm:p-9 relative overflow-hidden">
+
+        <!-- Envelope Intro Cover (Clicks to Unfold Letter) -->
+        <div id="envelope-cover" class="text-center py-8 px-4">
+          <div class="inline-block px-3.5 py-1 rounded-full bg-pink-100 text-pink-700 text-xs font-bold uppercase tracking-wider mb-4">
+            💌 Sealed With Appreciation
+          </div>
+          <h2 class="font-serif-title text-2xl sm:text-3xl font-bold text-pink-950 mb-2">
+            A Note Just For You, Samrudhhi
+          </h2>
+          <p class="text-xs sm:text-sm text-pink-800/80 max-w-md mx-auto mb-8">
+            No runaway buttons here—just a genuine message from the heart. Tap the wax seal below to open your letter.
+          </p>
+
+          <!-- Interactive Envelope Card -->
+          <div id="btn-open-envelope"
+            class="max-w-sm mx-auto p-6 rounded-3xl bg-gradient-to-b from-pink-100 via-rose-50 to-pink-100 border-2 border-pink-200 shadow-xl cursor-pointer group hover:scale-[1.02] transition-all duration-300 relative">
+            <div class="text-xs font-semibold uppercase tracking-widest text-pink-700/70 mb-4">
+              Private Delivery • Do Not Lose
+            </div>
+            <!-- Wax Seal Button -->
+            <div class="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-rose-500 via-pink-600 to-rose-700 border-4 border-amber-300 shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+              <span class="font-handwriting text-2xl text-amber-100 font-bold">S ♡</span>
+            </div>
+            <p class="font-handwriting text-2xl text-pink-900 mt-4">To: Samrudhhi ♡</p>
+            <span class="inline-block mt-3 text-xs font-bold text-pink-600 underline">
+              Tap Seal to Open Letter ✨
+            </span>
+          </div>
+        </div>
+
+        <!-- Unfolded Stationery Letter Content -->
+        <div id="letter-content-wrap" class="hidden">
+          <div class="letter-paper rounded-2xl p-6 sm:p-10 text-left">
+
+            <!-- Top Decorative Header -->
+            <div class="flex items-center justify-between border-b border-pink-200/80 pb-4 mb-6">
+              <div>
+                <span class="text-xs uppercase tracking-widest text-pink-600 font-bold block">Personal Note</span>
+                <h2 class="font-handwriting text-3xl sm:text-4xl font-bold text-pink-900 mt-0.5">
+                  Dear Baby,
+                </h2>
+              </div>
+              <div class="w-11 h-11 rounded-full bg-pink-100 border border-pink-200 flex items-center justify-center text-xl">
+                🌸
+              </div>
+            </div>
+
+            <!-- Letter Body with Staggered Fade-in Paragraphs -->
+            <div class="space-y-4 text-sm sm:text-base text-pink-950/90 leading-relaxed font-medium">
+              <p class="letter-paragraph">
+                Sometimes I don't find the perfect words to explain how much someone matters to me.
+              </p>
+              <p class="letter-paragraph">
+                Thank you for the laughs, the random conversations, the silly moments, and all the memories that become special without us even noticing.
+              </p>
+              <p class="letter-paragraph">
+                If there has ever been a misunderstanding or a moment when I made you feel bad, I'm genuinely sorry. I never want one confusing moment to make you forget that I value our friendship.
+              </p>
+              <p class="letter-paragraph">
+                You deserve happiness, kindness, patience, and people who always choose to understand you.
+              </p>
+              <p class="letter-paragraph">
+                This little website is my way of reminding you that you are appreciated.
+              </p>
+              <p class="letter-paragraph">
+                Stay exactly as wonderfully yourself as you are.
+              </p>
+            </div>
+
+            <!-- Signature -->
+            <div class="letter-paragraph mt-8 pt-4 border-t border-pink-200/70 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div>
+                <p class="text-xs uppercase tracking-wider text-pink-700/80 font-semibold">With lots of appreciation,</p>
+                <p class="font-handwriting text-3xl text-pink-700 font-bold mt-1">Your friend ♡</p>
+              </div>
+              <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-900 text-xs font-semibold self-start sm:self-end">
+                <span>✨ Always in your corner</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Continue to Final Screen Button -->
+          <div class="text-center mt-6">
+            <button id="btn-goto-finale" type="button"
+              class="btn-primary px-8 py-4 rounded-2xl font-bold text-base sm:text-lg inline-flex items-center gap-3 cursor-pointer">
+              <span>Claim Your Official Certificate 🏆</span>
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         STAGE 5: MEMORABLE FINAL SCREEN & CERTIFICATE
+         ========================================== -->
+    <section id="stage-5" class="stage-screen w-full">
+      <div class="glass-card rounded-3xl p-5 sm:p-9 text-center relative overflow-hidden">
+
+        <!-- Celebration Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-amber-100/90 border border-amber-300 text-amber-900 text-xs font-bold uppercase tracking-wider mb-3">
+          <span>🎉 100% Completed</span>
+        </div>
+
+        <!-- Final Headline -->
+        <h2 class="font-serif-title text-2xl sm:text-4xl font-bold text-pink-950 mb-2">
+          Congratulations! You survived my nonsense.
+        </h2>
+        <p class="text-xs sm:text-sm text-pink-800/80 max-w-md mx-auto mb-6">
+          As official proof of your patience, humour, and irreplaceable friendship, please accept this prestigious award:
+        </p>
+
+        <!-- Embossed Pastel & Gold Friendship Certificate -->
+        <div class="certificate-frame rounded-2xl p-6 sm:p-8 mb-6 text-center relative overflow-hidden">
+          <div class="text-[11px] sm:text-xs font-bold uppercase tracking-[0.25em] text-amber-700 mb-1">
+            ★ Official Friendship Registry ★
+          </div>
+          <h3 class="font-serif-title text-xl sm:text-2xl font-bold text-pink-950 mb-3">
+            Certificate of Best Friendship
+          </h3>
+          <p class="text-xs text-pink-700/80 uppercase tracking-wider mb-1">This is proudly presented to</p>
+          <div class="font-handwriting text-4xl sm:text-5xl font-bold bg-gradient-to-r from-pink-600 via-rose-500 to-amber-600 bg-clip-text text-transparent py-1 mb-3">
+            Samrudhhi ♡
+          </div>
+          <p class="text-xs sm:text-sm text-pink-900/85 max-w-md mx-auto leading-relaxed mb-5">
+            For being an extraordinary human being, surviving <span id="cert-dodge-count" class="font-bold text-pink-700">0</span> runaway button dodges, radiating unmatched kindness, and holding permanent VIP status in my life.
+          </p>
+
+          <!-- Certificate Footer Details -->
+          <div class="grid grid-cols-3 items-center pt-4 border-t border-amber-300/70 text-xs">
+            <div class="text-left">
+              <p class="text-[10px] uppercase text-pink-700/70 font-bold">Valid Until</p>
+              <p class="font-bold text-pink-950">Forever & Always ∞</p>
+            </div>
+            <div class="flex justify-center">
+              <div class="w-12 h-12 rounded-full bg-gradient-to-br from-amber-300 via-amber-400 to-yellow-600 border-2 border-white shadow-md flex items-center justify-center text-amber-950 font-bold text-[10px] leading-tight">
+                GOLD<br/>SEAL ★
+              </div>
+            </div>
+            <div class="text-right">
+              <p class="text-[10px] uppercase text-pink-700/70 font-bold">Status</p>
+              <p class="font-bold text-pink-700">Irreplaceable ♡</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Buttons: Final Surprise Animation & Replay -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5">
+          <button id="btn-final-surprise" type="button"
+            class="btn-gold w-full sm:w-auto px-7 py-3.5 rounded-2xl font-bold text-sm sm:text-base inline-flex items-center justify-center gap-2 cursor-pointer">
+            <span>Launch Final Surprise Animation 🎆</span>
+          </button>
+
+          <button id="btn-replay" type="button"
+            class="w-full sm:w-auto px-6 py-3.5 rounded-2xl bg-white hover:bg-pink-50 text-pink-700 border border-pink-200 font-semibold text-sm sm:text-base inline-flex items-center justify-center gap-2 transition shadow-sm cursor-pointer">
+            <span>Replay Experience ↻</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Custom Closing Surprise Modal (Never uses browser alert!) -->
+  <div id="custom-modal"
+    class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-pink-950/40 backdrop-blur-sm">
+    <div class="glass-card max-w-md w-full rounded-3xl p-6 sm:p-8 text-center border-2 border-white shadow-2xl transform transition-all scale-100">
+      <div id="modal-emoji" class="text-5xl mb-3 animate-bounce">💖</div>
+      <h3 id="modal-title" class="font-serif-title text-2xl sm:text-3xl font-bold text-pink-950 mb-2">
+        Keep Smiling, Samrudhhi!
+      </h3>
+      <p id="modal-body" class="text-sm sm:text-base text-pink-900/85 leading-relaxed mb-6">
+        Whenever you have a long day, remember that someone out here appreciates you more than words can say. Stay amazing! ♡
+      </p>
+      <button id="btn-close-modal" type="button"
+        class="btn-primary w-full py-3.5 rounded-2xl font-bold text-base cursor-pointer">
+        Aww, Thank You! ♡
+      </button>
+    </div>
+  </div>
+
+  <!-- Subtle Footer -->
+  <footer class="relative z-10 text-center py-3 px-4 text-xs text-pink-800/60 font-medium">
+    Crafted with patience, code & lots of appreciation for Samrudhhi ♡
+  </footer>
+
+  <!-- ==========================================
+       COMPLETE VANILLA JAVASCRIPT LOGIC
+       ========================================== -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* --------------------------------------------------
+         1. CUTE SYNTHESIZED SOUND ENGINE (Web Audio API)
+            No external MP3 files required!
+      -------------------------------------------------- */
+      let soundEnabled = true;
+      let audioCtx = null;
+
+      function getAudioContext() {
+        if (!audioCtx) {
+          const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+          if (AudioContextClass) {
+            audioCtx = new AudioContextClass();
+          }
+        }
+        if (audioCtx && audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
+        return audioCtx;
+      }
+
+      function playSound(type) {
+        if (!soundEnabled) return;
+        try {
+          const ctx = getAudioContext();
+          if (!ctx) return;
+
+          const now = ctx.currentTime;
+
+          if (type === 'pop') {
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(520, now);
+            osc.frequency.exponentialRampToValueAtTime(880, now + 0.09);
+            gain.gain.setValueAtTime(0.12, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.09);
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            osc.start(now);
+            osc.stop(now + 0.09);
+          } else if (type === 'dodge') {
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(300, now);
+            osc.frequency.exponentialRampToValueAtTime(620, now + 0.11);
+            gain.gain.setValueAtTime(0.1, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.11);
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            osc.start(now);
+            osc.stop(now + 0.11);
+          } else if (type === 'chime') {
+            const notes = [523.25, 659.25, 783.99, 1046.5];
+            notes.forEach((freq, idx) => {
+              const osc = ctx.createOscillator();
+              const gain = ctx.createGain();
+              osc.type = 'sine';
+              osc.frequency.setValueAtTime(freq, now + idx * 0.07);
+              gain.gain.setValueAtTime(0.1, now + idx * 0.07);
+              gain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.07 + 0.35);
+              osc.connect(gain);
+              gain.connect(ctx.destination);
+              osc.start(now + idx * 0.07);
+              osc.stop(now + idx * 0.07 + 0.35);
+            });
+          } else if (type === 'fanfare') {
+            const notes = [440, 554.37, 659.25, 880, 1108.73];
+            notes.forEach((freq, idx) => {
+              const osc = ctx.createOscillator();
+              const gain = ctx.createGain();
+              osc.type = 'triangle';
+              osc.frequency.setValueAtTime(freq, now + idx * 0.09);
+              gain.gain.setValueAtTime(0.13, now + idx * 0.09);
+              gain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.09 + 0.5);
+              osc.connect(gain);
+              gain.connect(ctx.destination);
+              osc.start(now + idx * 0.09);
+              osc.stop(now + idx * 0.09 + 0.5);
+            });
+          }
+        } catch (e) {
+          // Ignore audio errors on restricted devices
+        }
+      }
+
+      const soundToggleBtn = document.getElementById('sound-toggle');
+      const soundOnIcon = document.getElementById('sound-on-icon');
+      const soundOffIcon = document.getElementById('sound-off-icon');
+
+      soundToggleBtn.addEventListener('click', () => {
+        soundEnabled = !soundEnabled;
+        soundOnIcon.classList.toggle('hidden', !soundEnabled);
+        soundOffIcon.classList.toggle('hidden', soundEnabled);
+        if (soundEnabled) playSound('pop');
+      });
+
+      /* --------------------------------------------------
+         2. FLOATING BACKGROUND HEARTS & STARS + BURST FX
+      -------------------------------------------------- */
+      const bgContainer = document.getElementById('bg-particles');
+      const symbols = ['♡', '♥', '✦', '✧', '🌸', '✨'];
+
+      function createFloatingParticles() {
+        bgContainer.innerHTML = '';
+        const count = window.innerWidth < 640 ? 16 : 26;
+        for (let i = 0; i < count; i++) {
+          const span = document.createElement('span');
+          span.className = 'floating-item select-none';
+          span.textContent = symbols[i % symbols.length];
+          span.style.left = Math.random() * 96 + 'vw';
+          span.style.fontSize = (12 + Math.random() * 16) + 'px';
+          span.style.color = i % 3 === 0 ? '#d4af37' : '#ff6b9d';
+          span.style.animationDuration = (9 + Math.random() * 12) + 's';
+          span.style.animationDelay = (-Math.random() * 15) + 's';
+          bgContainer.appendChild(span);
+        }
+      }
+      createFloatingParticles();
+
+      function triggerParticleBurst(x, y, count = 22) {
+        const emojis = ['💖', '✨', '🌸', '💕', '⭐', '🥰', '🎉'];
+        for (let i = 0; i < count; i++) {
+          const el = document.createElement('div');
+          el.className = 'burst-particle text-lg sm:text-xl';
+          el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+          el.style.left = x + 'px';
+          el.style.top = y + 'px';
+          document.body.appendChild(el);
+
+          const angle = Math.random() * Math.PI * 2;
+          const velocity = 50 + Math.random() * 130;
+          const tx = Math.cos(angle) * velocity;
+          const ty = Math.sin(angle) * velocity - 40;
+          const rot = (Math.random() - 0.5) * 360;
+
+          el.animate([
+            { transform: 'translate(-50%, -50%) scale(0.4) rotate(0deg)', opacity: 1 },
+            { transform: `translate(calc(-50% + ${tx}px), calc(-50% + ${ty}px)) scale(1.2) rotate(${rot}deg)`, opacity: 0 }
+          ], {
+            duration: 900 + Math.random() * 450,
+            easing: 'cubic-bezier(0.22, 1, 0.36, 1)'
+          }).onfinish = () => el.remove();
+        }
+      }
+
+      /* --------------------------------------------------
+         3. STAGE NAVIGATION & PROGRESS DOTS
+      -------------------------------------------------- */
+      let currentStage = 1;
+      let autoSurpriseTimer = null;
+
+      function goToStage(stageNum) {
+        document.querySelectorAll('.stage-screen').forEach((sec, idx) => {
+          if (idx + 1 === stageNum) {
+            sec.classList.add('active');
+          } else {
+            sec.classList.remove('active');
+          }
+        });
+
+        for (let i = 1; i <= 5; i++) {
+          const dot = document.getElementById('dot-' + i);
+          if (i === stageNum) {
+            dot.className = 'w-6 h-2.5 rounded-full bg-pink-500 transition-all duration-300';
+          } else if (i < stageNum) {
+            dot.className = 'w-2.5 h-2.5 rounded-full bg-pink-400 transition-all duration-300';
+          } else {
+            dot.className = 'w-2 h-2 rounded-full bg-pink-200 transition-all duration-300';
+          }
+        }
+
+        currentStage = stageNum;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        // Trigger automatic surprise toast after 4.5 seconds on Stage 3
+        if (stageNum === 3) {
+          clearTimeout(autoSurpriseTimer);
+          autoSurpriseTimer = setTimeout(() => {
+            const toast = document.getElementById('auto-surprise-toast');
+            if (toast && toast.classList.contains('hidden')) {
+              toast.classList.remove('hidden');
+              playSound('chime');
+            }
+          }, 4200);
+        }
+
+        if (stageNum === 5) {
+          document.getElementById('cert-dodge-count').textContent = totalNoDodges;
+          playSound('fanfare');
+          triggerParticleBurst(window.innerWidth / 2, window.innerHeight / 3, 35);
+        }
+      }
+
+      document.getElementById('btn-start-experience').addEventListener('click', (e) => {
+        playSound('chime');
+        triggerParticleBurst(e.clientX || window.innerWidth / 2, e.clientY || window.innerHeight / 2, 20);
+        renderQuestion(0);
+        goToStage(2);
+      });
+
+      /* --------------------------------------------------
+         4. STAGE 2: 5 FUNNY QUESTIONS & RUNAWAY BUTTON
+      -------------------------------------------------- */
+      const questionsData = [
+        {
+          icon: '🤪',
+          title: 'Are you ready for some nonsense?',
+          subtext: 'Choose wisely... (Hint: One of these buttons has serious commitment issues)',
+          yesText: 'Yes, born ready! 💖',
+          noText: 'No thanks 🙄',
+          reactionEmoji: '🥳',
+          reactionTitle: 'That’s the spirit!',
+          reactionMsg: 'Buckle up Samrudhhi, the nonsense has officially begun!'
+        },
+        {
+          icon: '👑',
+          title: "Do you agree that you're an amazing person?",
+          subtext: 'Be honest! Modesty is temporarily disabled on this website.',
+          yesText: 'Yes, obviously! ✨',
+          noText: 'Nope, not me 🙈',
+          reactionEmoji: '🌟',
+          reactionTitle: '100% Fact Checked!',
+          reactionMsg: 'Even the "No" button refused to let you lie about how awesome you are.'
+        },
+        {
+          icon: '😈',
+          title: 'Am I allowed to annoy you forever?',
+          subtext: 'Read the fine print: Saying yes includes random memes and silly jokes.',
+          yesText: 'Yes, annoy away! 😂',
+          noText: 'Absolutely not 🚫',
+          reactionEmoji: '🤝',
+          reactionTitle: 'Contract Renewed Forever!',
+          reactionMsg: 'No take-backs! You are officially stuck with my nonsense.'
+        },
+        {
+          icon: '🎟️',
+          title: 'Do you accept unlimited friendship privileges?',
+          subtext: 'Includes someone who always listens, supports you, and hypes you up.',
+          yesText: 'Yes, I accept! 💝',
+          noText: 'Decline offer ❌',
+          reactionEmoji: '🥂',
+          reactionTitle: 'VIP Status Activated!',
+          reactionMsg: 'Unlimited friendship privileges have been added to your account.'
+        },
+        {
+          icon: '🌸',
+          title: 'Will you accept a little appreciation?',
+          subtext: 'Last question! Because you genuinely deserve to be celebrated today.',
+          yesText: 'Yes, show me! 🥰',
+          noText: 'No appreciation 🙅‍♀️',
+          reactionEmoji: '💖',
+          reactionTitle: 'Yay! Vault Unlocked!',
+          reactionMsg: 'Get ready for some unexpected surprises made just for you!'
+        }
+      ];
+
+      const funnyDodgeLines = [
+        'Nice try! 😜',
+        'Too slow! 🏃‍♀️💨',
+        'Button broken 🙈',
+        'Click the pink one! 👉',
+        'Not an option! 🚫',
+        'Error 404: No not found',
+        'Wait, illegal move! 🚨',
+        'My creator disabled me 😎',
+        'Oops, slipped! 🛼',
+        'Try the other button! ✨'
+      ];
+
+      let currentQuestionIdx = 0;
+      let totalNoDodges = 0;
+      let yesScale = 1;
+
+      const qCounterBadge = document.getElementById('question-counter-badge');
+      const qProgressBar = document.getElementById('question-progress-bar');
+      const qMoodIcon = document.getElementById('question-mood-icon');
+      const qTitle = document.getElementById('question-title');
+      const qSubtext = document.getElementById('question-subtext');
+      const btnYes = document.getElementById('btn-answer-yes');
+      const btnNo = document.getElementById('btn-answer-no');
+      const buttonArena = document.getElementById('button-arena');
+      const dodgeBadge = document.getElementById('dodge-counter-badge');
+      const dodgeCountNum = document.getElementById('dodge-count-num');
+      const reactionOverlay = document.getElementById('question-reaction-overlay');
+
+      function renderQuestion(index) {
+        const q = questionsData[index];
+        qCounterBadge.textContent = `Question ${index + 1} of ${questionsData.length}`;
+        qProgressBar.style.width = `${((index + 1) / questionsData.length) * 100}%`;
+        qMoodIcon.textContent = q.icon;
+        qTitle.textContent = q.title;
+        qSubtext.textContent = q.subtext;
+        btnYes.textContent = q.yesText;
+        btnNo.textContent = q.noText;
+
+        // Reset button positions & scale for the new question
+        yesScale = 1;
+        btnYes.style.transform = 'scale(1)';
+        btnNo.style.position = 'relative';
+        btnNo.style.left = 'auto';
+        btnNo.style.top = 'auto';
+        btnNo.style.transform = 'scale(1) rotate(0deg)';
+        reactionOverlay.classList.add('hidden');
+      }
+
+      function dodgeNoButton(e) {
+        if (e) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+
+        playSound('dodge');
+        totalNoDodges++;
+        dodgeBadge.classList.remove('hidden');
+        dodgeCountNum.textContent = totalNoDodges;
+
+        // Pick a funny text
+        const randomLine = funnyDodgeLines[totalNoDodges % funnyDodgeLines.length];
+        btnNo.textContent = randomLine;
+
+        // Calculate safe coordinates inside the buttonArena so it never goes off screen
+        const arenaRect = buttonArena.getBoundingClientRect();
+        const btnRect = btnNo.getBoundingClientRect();
+
+        const padding = 12;
+        const maxX = Math.max(padding, arenaRect.width - btnRect.width - padding);
+        const maxY = Math.max(padding, arenaRect.height - btnRect.height - padding);
+
+        const randomX = Math.floor(padding + Math.random() * (maxX - padding));
+        const randomY = Math.floor(padding + Math.random() * (maxY - padding));
+
+        // Random scale (shrink or grow slightly) & playful tilt
+        const scales = [0.82, 0.88, 0.95, 1.06, 0.85];
+        const randomScale = scales[Math.floor(Math.random() * scales.length)];
+        const randomRot = Math.floor((Math.random() - 0.5) * 18);
+
+        btnNo.style.position = 'absolute';
+        btnNo.style.left = randomX + 'px';
+        btnNo.style.top = randomY + 'px';
+        btnNo.style.transform = `scale(${randomScale}) rotate(${randomRot}deg)`;
+
+        // Make the YES button grow slightly more inviting
+        yesScale = Math.min(1.22, yesScale + 0.04);
+        btnYes.style.transform = `scale(${yesScale})`;
+
+        qSubtext.textContent = `Haha! The "No" button ran away (${totalNoDodges}x). Just click the pink one! 💖`;
+      }
+
+      // Desktop hover & Mobile touch events for the runaway button
+      btnNo.addEventListener('mouseenter', dodgeNoButton);
+      btnNo.addEventListener('touchstart', dodgeNoButton, { passive: false });
+      btnNo.addEventListener('click', dodgeNoButton);
+
+      // Positive Button Click
+      btnYes.addEventListener('click', (e) => {
+        playSound('chime');
+        const rect = btnYes.getBoundingClientRect();
+        triggerParticleBurst(rect.left + rect.width / 2, rect.top + rect.height / 2, 24);
+
+        const q = questionsData[currentQuestionIdx];
+        document.getElementById('reaction-emoji').textContent = q.reactionEmoji;
+        document.getElementById('reaction-title').textContent = q.reactionTitle;
+        document.getElementById('reaction-message').textContent = q.reactionMsg;
+
+        const nextBtn = document.getElementById('btn-next-question');
+        if (currentQuestionIdx === questionsData.length - 1) {
+          nextBtn.innerHTML = '<span>Unlock Unexpected Surprises ✨</span>';
+        } else {
+          nextBtn.innerHTML = '<span>Next Question →</span>';
+        }
+
+        reactionOverlay.classList.remove('hidden');
+      });
+
+      document.getElementById('btn-next-question').addEventListener('click', () => {
+        playSound('pop');
+        if (currentQuestionIdx < questionsData.length - 1) {
+          currentQuestionIdx++;
+          renderQuestion(currentQuestionIdx);
+        } else {
+          goToStage(3);
+        }
+      });
+
+      /* --------------------------------------------------
+         5. STAGE 3: 4 UNEXPECTED SURPRISES LOGIC
+      -------------------------------------------------- */
+      document.getElementById('close-auto-toast').addEventListener('click', () => {
+        playSound('pop');
+        document.getElementById('auto-surprise-toast').classList.add('hidden');
+      });
+
+      // Surprise 1: Hidden Compliment Generator
+      const compliments = [
+        "Samrudhhi, you have the rare superpower of making ordinary conversations feel unforgettable. ✨",
+        "Your laugh is genuinely one of the best sounds on the planet. Never stop smiling! 🌸",
+        "You have the kindest heart, even when you pretend to be tough. 💖",
+        "Talking to you is an instant mood booster—better than 10 cups of coffee! ☕✨",
+        "You make people feel heard, valued, and understood without even trying. 🌟",
+        "Your vibe is 10/10: equal parts chaos, sweetness, and pure gold. 👑",
+        "The world is genuinely a softer, brighter place because you're in it, Samrudhhi. 🌷",
+        "Official Reminder: You are appreciated way more than you realize! ♡"
+      ];
+      let compIndex = 0;
+      const compBox = document.getElementById('compliment-box');
+      const compCount = document.getElementById('compliment-count');
+
+      document.getElementById('btn-compliment').addEventListener('click', (e) => {
+        playSound('pop');
+        compBox.textContent = `"${compliments[compIndex]}"`;
+        compCount.textContent = `${compIndex + 1} / ${compliments.length}`;
+        compIndex = (compIndex + 1) % compliments.length;
+        const rect = e.currentTarget.getBoundingClientRect();
+        triggerParticleBurst(rect.left + rect.width / 2, rect.top, 10);
+      });
+
+      // Surprise 2: Mystery Gift Box
+      const boxClosed = document.getElementById('mystery-box-closed');
+      const boxOpened = document.getElementById('mystery-box-opened');
+      const boxSvg = document.getElementById('mystery-box-svg');
+      const boxStatus = document.getElementById('box-status-badge');
+
+      boxClosed.addEventListener('click', (e) => {
+        playSound('chime');
+        boxSvg.classList.add('shake-box');
+        boxStatus.textContent = 'Opening...';
+        setTimeout(() => {
+          boxClosed.classList.add('hidden');
+          boxOpened.classList.remove('hidden');
+          boxStatus.textContent = '2 VIP Passes Claimed ✓';
+          const rect = boxOpened.getBoundingClientRect();
+          triggerParticleBurst(rect.left + rect.width / 2, rect.top + 30, 18);
+        }, 520);
+      });
+
+      // Surprise 3: Delayed Surprise Detector (3-Second Awesomeness Radar)
+      const btnRadar = document.getElementById('btn-radar-scan');
+      const radarMsg = document.getElementById('radar-message');
+      const radarStatus = document.getElementById('radar-status-text');
+      const radarWrap = document.getElementById('radar-progress-wrap');
+      const radarBar = document.getElementById('radar-progress-bar');
+      let radarRunning = false;
+
+      btnRadar.addEventListener('click', () => {
+        if (radarRunning) return;
+        radarRunning = true;
+        playSound('pop');
+        btnRadar.disabled = true;
+        btnRadar.classList.add('opacity-70');
+        btnRadar.textContent = 'Scanning Samrudhhi... 📡';
+        radarStatus.textContent = 'Scanning...';
+        radarWrap.classList.remove('hidden');
+        radarBar.style.width = '15%';
+        radarMsg.textContent = 'Measuring kindness, chaos & cuteness levels...';
+
+        setTimeout(() => {
+          radarBar.style.width = '60%';
+          radarMsg.textContent = 'Warning: Readings exceeding normal human limits...';
+          playSound('pop');
+        }, 1100);
+
+        setTimeout(() => {
+          radarBar.style.width = '100%';
+          radarStatus.textContent = 'Overload! 💖';
+          radarMsg.innerHTML = '<strong class="text-rose-700">RESULT: 9,999% AWESOMENESS!</strong><br/>Radar overloaded by Samrudhhi’s wonderfulness ♡';
+          btnRadar.textContent = 'Scan Complete: Certified Iconic ✓';
+          playSound('fanfare');
+          const rect = btnRadar.getBoundingClientRect();
+          triggerParticleBurst(rect.left + rect.width / 2, rect.top, 22);
+          radarRunning = false;
+        }, 2800);
+      });
+
+      // Surprise 4: Mini Friendship Challenge (Charge the Appreciation Meter)
+      let meterValue = 0;
+      const meterBar = document.getElementById('friendship-meter-bar');
+      const meterBadge = document.getElementById('meter-percent-badge');
+      const btnCharge = document.getElementById('btn-charge-meter');
+      const unlockHint = document.getElementById('letter-unlock-hint');
+
+      btnCharge.addEventListener('click', (e) => {
+        if (meterValue < 100) {
+          meterValue = Math.min(100, meterValue + 20);
+          meterBar.style.width = meterValue + '%';
+          meterBadge.textContent = meterValue + '% Charged';
+          playSound('pop');
+
+          const rect = btnCharge.getBoundingClientRect();
+          triggerParticleBurst(rect.left + rect.width / 2, rect.top, 8);
+
+          if (meterValue === 100) {
+            playSound('fanfare');
+            btnCharge.textContent = '100% Charged! Maximum Appreciation 💖';
+            unlockHint.textContent = '🎉 Challenge Complete! Your personalised letter is glowing below!';
+            triggerParticleBurst(window.innerWidth / 2, window.innerHeight / 2, 28);
+          }
+        } else {
+          playSound('chime');
+          const rect = btnCharge.getBoundingClientRect();
+          triggerParticleBurst(rect.left + rect.width / 2, rect.top, 12);
+        }
+      });
+
+      document.getElementById('btn-goto-letter').addEventListener('click', () => {
+        playSound('chime');
+        goToStage(4);
+      });
+
+      /* --------------------------------------------------
+         6. STAGE 4: PERSONALISED LETTER REVEAL ANIMATION
+      -------------------------------------------------- */
+      const envelopeCover = document.getElementById('envelope-cover');
+      const letterWrap = document.getElementById('letter-content-wrap');
+      const btnOpenEnvelope = document.getElementById('btn-open-envelope');
+
+      btnOpenEnvelope.addEventListener('click', (e) => {
+        playSound('chime');
+        triggerParticleBurst(e.clientX || window.innerWidth / 2, e.clientY || window.innerHeight / 2, 22);
+        envelopeCover.classList.add('hidden');
+        letterWrap.classList.remove('hidden');
+
+        // Staggered paragraph fade-in
+        const paragraphs = letterWrap.querySelectorAll('.letter-paragraph');
+        paragraphs.forEach((p, idx) => {
+          p.classList.remove('revealed');
+          setTimeout(() => {
+            p.classList.add('revealed');
+          }, 220 + idx * 320);
+        });
+      });
+
+      document.getElementById('btn-goto-finale').addEventListener('click', () => {
+        goToStage(5);
+      });
+
+      /* --------------------------------------------------
+         7. STAGE 5: GRAND FINALE & REPLAY LOGIC
+      -------------------------------------------------- */
+      const customModal = document.getElementById('custom-modal');
+      const btnFinalSurprise = document.getElementById('btn-final-surprise');
+      const btnCloseModal = document.getElementById('btn-close-modal');
+      const btnReplay = document.getElementById('btn-replay');
+
+      btnFinalSurprise.addEventListener('click', () => {
+        playSound('fanfare');
+        // Multi-burst celebration across the screen
+        for (let i = 0; i < 4; i++) {
+          setTimeout(() => {
+            const rx = (0.2 + Math.random() * 0.6) * window.innerWidth;
+            const ry = (0.2 + Math.random() * 0.5) * window.innerHeight;
+            triggerParticleBurst(rx, ry, 26);
+          }, i * 240);
+        }
+        setTimeout(() => {
+          customModal.classList.remove('hidden');
+          customModal.classList.add('flex');
+        }, 650);
+      });
+
+      btnCloseModal.addEventListener('click', () => {
+        playSound('pop');
+        customModal.classList.add('hidden');
+        customModal.classList.remove('flex');
+      });
+
+      btnReplay.addEventListener('click', () => {
+        playSound('pop');
+        // Reset state cleanly
+        currentQuestionIdx = 0;
+        totalNoDodges = 0;
+        dodgeBadge.classList.add('hidden');
+        envelopeCover.classList.remove('hidden');
+        letterWrap.classList.add('hidden');
+        renderQuestion(0);
+        goToStage(1);
+      });
+
+    })();
+  </script>
+</body>
+</html>
